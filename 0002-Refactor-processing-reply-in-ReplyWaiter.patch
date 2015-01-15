@@ -1,0 +1,55 @@
+From 3685ec8069d6ca0b7315388b88cc9294bb4204d4 Mon Sep 17 00:00:00 2001
+From: Victor Morales <victor.morales@intel.com>
+Date: Wed, 15 Jul 2015 13:29:54 -0500
+Subject: [PATCH] Refactor processing reply in ReplyWaiter
+
+At the moment for each msg_id we receive two amqp message - first one
+with the payload, a second one to ensure the other have finish to send
+the payload. This was made, because a long time ago 'reply' allowed
+generator as payload to send multiple messages on one 'rpc.call' - [1]
+It's a bad idea - to double RPC messages for each call, so we are going
+to remove this the second AMQP message sending. This patch allows
+receiver side to proceed correctly old case - two AMQP messages (first
+with data and second with 'ending' parameter) same as the new one (a
+single message with data 'ending' parameter)
+---
+ oslo_messaging/_drivers/amqpdriver.py | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+diff --git a/oslo_messaging/_drivers/amqpdriver.py b/oslo_messaging/_drivers/amqpdriver.py
+index 56051a0..7b3ed08 100644
+--- a/oslo_messaging/_drivers/amqpdriver.py
++++ b/oslo_messaging/_drivers/amqpdriver.py
+@@ -220,17 +220,15 @@ class ReplyWaiter(object):
+             _('Timed out waiting for a reply to message ID %s.') % msg_id)
+ 
+     def _process_reply(self, data):
+-        result = None
+-        ending = False
+         self.msg_id_cache.check_duplicate_message(data)
+         if data['failure']:
+             failure = data['failure']
+             result = rpc_common.deserialize_remote_exception(
+                 failure, self.allowed_remote_exmods)
+-        elif data.get('ending', False):
+-            ending = True
+         else:
+-            result = data['result']
++            result = data.get('result', None)
++
++        ending = data.get('ending', False)
+         return result, ending
+ 
+     def wait(self, msg_id, timeout):
+@@ -249,7 +247,7 @@ class ReplyWaiter(object):
+                 self._raise_timeout_exception(msg_id)
+ 
+             reply, ending = self._process_reply(message)
+-            if not ending:
++            if reply is not None:
+                 final_reply = reply
+         return final_reply
+ 
+-- 
+2.1.0
+
