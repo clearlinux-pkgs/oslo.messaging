@@ -1,4 +1,4 @@
-From bb53f93f5dd8746324ae28e71422656eac41ea20 Mon Sep 17 00:00:00 2001
+From bbe2bfa0716705bce4c050886e30659a0835d5e5 Mon Sep 17 00:00:00 2001
 From: "Simental Magana, Marcos" <marcos.simental.magana@intel.com>
 Date: Mon, 7 Sep 2015 16:24:45 -0500
 Subject: [PATCH] Speedy Gonzalez rabbitmq message trace
@@ -10,52 +10,55 @@ every message sent, still need to look deeper into how callbacks are
 done, but this will give us some metrics about the time need for
 message handling.
 ---
- oslo_messaging/_drivers/impl_rabbit.py | 28 ++++++++++++++++++++++++++++
- 1 file changed, 28 insertions(+)
+ oslo_messaging/_drivers/impl_rabbit.py | 31 +++++++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
 
 diff --git a/oslo_messaging/_drivers/impl_rabbit.py b/oslo_messaging/_drivers/impl_rabbit.py
-index a776207..6cafdd0 100644
+index a776207..5876645 100644
 --- a/oslo_messaging/_drivers/impl_rabbit.py
 +++ b/oslo_messaging/_drivers/impl_rabbit.py
-@@ -217,6 +217,20 @@ class ConsumerBase(object):
+@@ -217,6 +217,22 @@ class ConsumerBase(object):
          """
  
          try:
-+            _msg = message.decode()['oslo.message']
-+            if '"_msg_id": ' in _msg:
-+                keyword = '"_msg_id": '
-+            elif '"_unique_id": ' in _msg:
-+                keyword = '"_unique_id": '
-+            elif '"_context_timestamp"' in _msg:
-+                keyword = '"_unique_id": '
-+            else:
-+                keyword = None
-+            if keyword:
-+                kwrd_len = len(keyword)
-+                kwrd_indx = _msg.index(keyword) + kwrd_len
-+                msg_value = str(_msg[kwrd_indx:]).translate(None, '"},').split()[0]
-+            LOG.debug("1Speedy Gonzales received message %s: %s", keyword, msg_value)
++            __msg = message.decode()
++            if 'oslo.message' in __msg:
++                _msg = __msg['oslo.message']
++                if '"_msg_id": ' in _msg:
++                    keyword = '"_msg_id": '
++                elif '"_unique_id": ' in _msg:
++                    keyword = '"_unique_id": '
++                elif '"_context_timestamp"' in _msg:
++                    keyword = '"_unique_id": '
++                else:
++                    keyword = None
++                if keyword:
++                    kwrd_len = len(keyword)
++                    kwrd_indx = _msg.index(keyword) + kwrd_len
++                    msg_value = str(_msg[kwrd_indx:]).translate(None, '"},').split()[0]
++                LOG.debug("1Speedy Gonzales received message %s: %s", keyword, msg_value)
              callback(RabbitMessage(message))
          except Exception:
              LOG.exception(_("Failed to process message"
-@@ -1092,6 +1106,20 @@ class Connection(object):
+@@ -1092,6 +1108,21 @@ class Connection(object):
              LOG.debug('Exception', exc_info=exc)
  
          def _publish():
-+            _msg = msg['oslo.message']
-+            if '"_msg_id": ' in _msg:
-+                keyword = '"_msg_id": '
-+            elif '"_unique_id": ' in _msg:
-+                keyword = '"_unique_id": '
-+            elif '"_context_timestamp"' in _msg:
-+                keyword = '"_unique_id": '
-+            else:
-+                keyword = None
-+            if keyword:
-+                kwrd_len = len(keyword)
-+                kwrd_indx = _msg.index(keyword) + kwrd_len
-+                msg_value = str(_msg[kwrd_indx:]).translate(None, '"},').split()[0]
-+            LOG.debug("0Speedy Gonzalez sending message %s: %s", keyword, msg_value)
++            if 'oslo.message' in msg:
++                _msg = msg['oslo.message']
++                if '"_msg_id": ' in _msg:
++                    keyword = '"_msg_id": '
++                elif '"_unique_id": ' in _msg:
++                    keyword = '"_unique_id": '
++                elif '"_context_timestamp"' in _msg:
++                    keyword = '"_unique_id": '
++                else:
++                    keyword = None
++                if keyword:
++                    kwrd_len = len(keyword)
++                    kwrd_indx = _msg.index(keyword) + kwrd_len
++                    msg_value = str(_msg[kwrd_indx:]).translate(None, '"},').split()[0]
++                LOG.debug("0Speedy Gonzalez sending message %s: %s", keyword, msg_value)
              publisher.send(self, msg, timeout)
  
          with self._connection_lock:
