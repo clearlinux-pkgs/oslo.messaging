@@ -4,7 +4,7 @@
 #
 Name     : oslo.messaging
 Version  : 1.8.3
-Release  : 24
+Release  : 25
 URL      : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-1.8.3.tar.gz
 Source0  : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-1.8.3.tar.gz
 Summary  : Oslo Messaging API
@@ -81,7 +81,6 @@ BuildRequires : unittest2-python
 BuildRequires : virtualenv
 Patch1: 0001-Allow-to-remove-second-_send_reply-call.patch
 Patch2: 0002-Refactor-processing-reply-in-ReplyWaiter.patch
-Patch3: 0003-Speedy-Gonzalez-rabbitmq-message-trace.patch
 
 %description
 Oslo Messaging Library
@@ -109,7 +108,6 @@ python components for the oslo.messaging package.
 %setup -q -n oslo.messaging-1.8.3
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
 python2 setup.py build -b py2
@@ -121,7 +119,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 python2 setup.py test
 %install
 rm -rf %{buildroot}
-python2 setup.py build -b py2 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot}
 
 %files
 %defattr(-,root,root,-)
