@@ -60,3 +60,10 @@ traceback2-python
 trollius-python
 unittest2-python
 WebOb-python
+debtcollector-python
+wrapt-python
+monotonic-python
+oslo.service-python
+oslo.concurrency-python
+fasteners-python
+oslo.log-python
