@@ -4,7 +4,7 @@
 #
 Name     : oslo.messaging
 Version  : 2.5.0
-Release  : 27
+Release  : 28
 URL      : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-2.5.0.tar.gz
 Source0  : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-2.5.0.tar.gz
 Summary  : Oslo Messaging API
@@ -33,6 +33,7 @@ BuildRequires : extras-python
 BuildRequires : fasteners-python
 BuildRequires : fixtures-python
 BuildRequires : flake8-python
+BuildRequires : funcsigs-python
 BuildRequires : futures-python
 BuildRequires : futurist-python
 BuildRequires : greenlet-python
@@ -108,6 +109,26 @@ bin components for the oslo.messaging package.
 %package python
 Summary: python components for the oslo.messaging package.
 Group: Default
+Requires: PyYAML-python
+Requires: WebOb-python
+Requires: aioeventlet-python
+Requires: amqp-python
+Requires: cachetools-python
+Requires: eventlet-python
+Requires: futurist-python
+Requires: greenlet-python
+Requires: kombu-python
+Requires: oslo.config-python
+Requires: oslo.context-python
+Requires: oslo.i18n-python
+Requires: oslo.log-python
+Requires: oslo.middleware-python
+Requires: oslo.serialization-python
+Requires: oslo.service-python
+Requires: oslo.utils-python
+Requires: six-python
+Requires: stevedore-python
+Requires: trollius-python
 
 %description python
 python components for the oslo.messaging package.
