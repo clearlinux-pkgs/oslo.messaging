@@ -1,6 +1,31 @@
 CHANGES
 =======
 
+4.0.0
+-----
+
+* [zmq] PUB-SUB pipeline
+* Updated from global requirements
+* Updated from global requirements
+* Move to debug a too verbose log
+* Cleanup parameter docstrings
+* Removes MANIFEST.in as it is not needed explicitely by PBR
+* Revert "default of kombu_missing_consumer_retry_timeout"
+* Don't trigger error_callback for known exc
+* Improves comment
+* Fix reconnection when heartbeat is missed
+* Revert "serializer: deprecate RequestContextSerializer"
+* Fix notifier options registration
+* notif: Check the driver features in dispatcher
+* batch notification listener
+* Updated from global requirements
+* creates a dispatcher abstraction
+* Remove unnecessary quote
+* Fix multiline strings with missing spaces
+* Properly skip zmq tests without ZeroMQ being installed
+* kombu: remove compat of folsom reply format
+* Follow the plan about the single reply message
+
 3.1.0
 -----
 
