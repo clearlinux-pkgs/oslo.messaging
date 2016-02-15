@@ -4,7 +4,7 @@
 #
 Name     : oslo.messaging
 Version  : 4.0.0
-Release  : 34
+Release  : 35
 URL      : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-4.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-4.0.0.tar.gz
 Summary  : Oslo Messaging API
@@ -32,7 +32,6 @@ BuildRequires : extras-python
 BuildRequires : fasteners-python
 BuildRequires : fixtures-python
 BuildRequires : flake8-python
-BuildRequires : funcsigs-python
 BuildRequires : futures-python
 BuildRequires : futurist-python
 BuildRequires : greenlet-python
