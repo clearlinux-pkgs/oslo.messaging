@@ -1,17 +1,108 @@
 CHANGES
 =======
 
+4.3.0
+-----
+
+* simulator.py improvements
+* rabbit: improvements to QoS
+* Updated from global requirements
+* Remove server queue creating if target's server is empty
+* Updated from global requirements
+* Correctly set socket timeout for publishing
+* Updated from global requirements
+* Use more secure yaml.safe_load() instead of yaml.load()
+* [kombu] Implement experimental message compression
+* [zmq] Multithreading access to zmq sockets
+* [zmq] ZMQ_LINGER default value
+* Remove matchmaker_redis configs from [DEFAULT]
+* Refactors base classes
+
+4.2.0
+-----
+
+* Switches pika driver to eager connection to RabbitMQ
+* [zmq] Use PUSH/PULL for direct CAST
+* Updated from global requirements
+* support ability to set thread pool size per listener
+* Fix misspellings
+* [zmq] RPC timeout for CAST
+* Enable pep8 on oslo_messaging/tests
+
+4.1.0
+-----
+
+* [zmq] Fix slow down
+* Update translation setup
+* Let PikaDriver inherit base.BaseDriver
+* Improve simulator.py
+* Fixed some warnings about imports and variable
+* Updated from global requirements
+* Adds document and configuration guide
+* [zmq] Support KeyboardInterrupt for broker
+* [zmq] Reduce proxy for direct messaging
+* Fixed a couple of pep8 errors/warnings
+* assertEquals is deprecated, use assertEqual
+* Updated from global requirements
+* Updated from global requirements
+* Trivial: Remove unused logging import
+* replace string format arguments with function parameters
+* Adds params field to BlockingConnection object
+* Python 3 deprecated the logger.warn method in favor of warning
+* Fix URL in warning message
+* [zmq] Implement background redis polling from the client-side
+* rabbit: Add option to configure QoS prefetch count
+* rabbit: making interval_max configurable
+* Imported Translations from Zanata
+* Updated from global requirements
+* Logging rpc client/server targets
+* Updated from global requirements
+* Topic/server arguments changed in simulator.py
+* [zmq] Update zmq-guide with new options
+* [zmq] Listeners management cleanup
+* Drop H237,H402,H904 in flake8 ignore list
+* Replace deprecated library function os.popen() with subprocess
+* py3: Replaces xrange() with six.moves.range()
+* Kombu: make reply and fanout queues expire instead of auto-delete
+* fix .gitreview - bad merge from pika branch
+* Explicitly add pika dependencies
+* Add duration option to simulator.py
+* [zmq] Added redis sentinel HA implementation to zmq driver
+* rabbit: set interval max for auto retry
+* [zmq] Add TTL to redis records
+* Updated from global requirements
+* make enforce_type=True in CONF.set_override
+* Use assertTrue/False instead of assertEqual(T/F)
+* Improvement of logging acorrding to oslo.i18n guideline
+* Updated from global requirements
+* rabbit: fix unit conversion error of expiration
+* list_opts: update the notification options group
+* rabbit: Missing to pass parameter timeout to next
+* Fix formatting of code blocks in zmq docs
+* Adds unit tests for pika_poll module
+* Updated from global requirements
+* [zmq] Switch notifications to PUB/SUB pattern
+* Optimize sending of a reply in RPC server
+* Optimize simulator.py for better throughput
+* Remove stale directory synced from oslo-incubator
+* Fix wrong bugs report URL in CONTRIBUTING
+* zmq: Don't log error when can't import zmq module
+
 4.0.0
 -----
 
+* assertIsNone(val) instead of assertEqual(None,val)
+* Adds tests for pika_message.py
 * [zmq] PUB-SUB pipeline
 * Updated from global requirements
+* Fixes conflicts after merging master
 * Updated from global requirements
 * Move to debug a too verbose log
 * Cleanup parameter docstrings
 * Removes MANIFEST.in as it is not needed explicitely by PBR
 * Revert "default of kombu_missing_consumer_retry_timeout"
 * Don't trigger error_callback for known exc
+* Adds comment for pika_pooler.py
 * Improves comment
 * Fix reconnection when heartbeat is missed
 * Revert "serializer: deprecate RequestContextSerializer"
@@ -19,6 +110,8 @@ CHANGES
 * notif: Check the driver features in dispatcher
 * batch notification listener
 * Updated from global requirements
+* Adds comment, updates pika-pool version
+* Preparations for configurable serialization
 * creates a dispatcher abstraction
 * Remove unnecessary quote
 * Fix multiline strings with missing spaces
@@ -33,6 +126,7 @@ CHANGES
 * rename kombu_reconnect_timeout option
 * Skip Cyrus SASL tests if proton does not support Cyrus SASL
 * setUp/tearDown decorator for set/clear override
+* Adds comments and small fixes
 * Support older notifications set_override keys
 * Don't hold the connection when reply fail
 * doc: explain rpc call/cast expection
@@ -49,10 +143,13 @@ CHANGES
 * serializer: remove deprecated RequestContextSerializer
 * Add log info for AMQP client
 * Updated from global requirements
+* Provide missing parts of error messages
 * Add Warning when we cannot notify
 * ignore .eggs directory
 * serializer: deprecate RequestContextSerializer
 * middleware: remove oslo.context usage
+* Removes additional select module patching
+* Fix delay before host reconnecting
 
 3.0.0
 -----
@@ -72,6 +169,7 @@ CHANGES
 * [zmq] Make bind address configurable
 * [zmq][matchmaker] Distinguish targets by listener types
 * [zmq] Update zmq-deployment guide according to the new driver
+* Implements more smart retrying
 * Make "Connect(ing|ed) to AMQP server" log messages DEBUG level
 * Updated from global requirements
 * Decouple transport for RPC and Notification
@@ -81,12 +179,15 @@ CHANGES
 -----
 
 * Revert "Robustify locking in MessageHandlingServer"
+* Splits pika driver into several files
+* Fixes and improvements after testing on RabbitMQ cluster:
 * Move supported messaging drivers in-tree
 
 2.8.0
 -----
 
 * Add a "bandit" target to tox.ini
+* Fix fanout exchange name pattern
 * Updated from global requirements
 * Remove a useless statement
 * Robustify locking in MessageHandlingServer
@@ -100,6 +201,8 @@ CHANGES
 * Fix a race calling blocking MessageHandlingServer.start()
 * Fix assumptions in test_server_wait_method
 * Rename MessageHandlingServer._executor for readability
+* Implements rabbit-pika driver
+* bootstrap branch
 * Updated from global requirements
 
 2.7.0
