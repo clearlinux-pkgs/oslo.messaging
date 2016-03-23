@@ -1,6 +1,50 @@
 CHANGES
 =======
 
+4.5.1
+-----
+
+* Bump rabbit_transient_queues_ttl to 30 mins
+* Fix Notification listener blocking behavior
+* Update .gitreview for stable/mitaka
+
+4.5.0
+-----
+
+* amqp: log time elapsed between receiving a message and replying
+* [zmq] Matchmaker redis set instead of list
+* Allow Notifier to have multiple topics
+* Fix a minor syntax error in a log statement
+* Use PortOpt on kafka_default_port
+* Added duration to notify server/client
+* Improves logging
+* Use more efficient mask_dict_password to mask password
+* Improves poller's stop logic
+* Typos of 'recieve' instead of 'receive'
+* [zmq] Support transport URL
+* Get kafka notifications to work with kafka-python 0.9.5
+* Move server's logic from executors
+* Avoid hardcoding the notification topic and specify driver
+* [zmq] Fix cinder create volume hangs
+* Py3: Replace filter()/map() if a list is needed
+* Py3: Switch json to oslo_serialization
+* Updated from global requirements
+
+4.4.0
+-----
+
+* Updated from global requirements
+* Option rpc_response_timeout should not be used in zmq driver
+* Remove duplicate requirements
+* Reduce number of rabbitmq consumer tag used
+* Documents the mirror queue policy of RabbitMQ 3.0
+* fix override_pool_size
+* Remove executor callback
+* Log format change in simulator.py
+* Fix kombu accept different TTL since version 3.0.25
+* .testr.conf: revert workaround of testtools bug
+* Remove aioeventlet executor
+
 4.3.0
 -----
 
@@ -22,6 +66,7 @@ CHANGES
 -----
 
 * Switches pika driver to eager connection to RabbitMQ
+* Remove bandit.yaml in favor of defaults
 * [zmq] Use PUSH/PULL for direct CAST
 * Updated from global requirements
 * support ability to set thread pool size per listener
