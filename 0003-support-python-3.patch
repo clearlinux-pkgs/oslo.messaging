@@ -1,0 +1,25 @@
+From 0d30a3fa647b49d1f7a130b2dcf32bbe6318ac5a Mon Sep 17 00:00:00 2001
+From: "Simental Magana, Marcos" <marcos.simental.magana@intel.com>
+Date: Mon, 28 Mar 2016 16:40:58 -0600
+Subject: [PATCH] support python 3
+
+---
+ setup.cfg | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/setup.cfg b/setup.cfg
+index 35d9752..64dd9e3 100644
+--- a/setup.cfg
++++ b/setup.cfg
+@@ -15,6 +15,8 @@ classifier =
+ 	Operating System :: OS Independent
+ 	Programming Language :: Python
+ 	Programming Language :: Python :: 2.7
++	Programming Language :: Python :: 3
++	Programming Language :: Python :: 3.4
+ 
+ [files]
+ packages = 
+-- 
+2.4.3
+
