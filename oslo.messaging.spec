@@ -4,7 +4,7 @@
 #
 Name     : oslo.messaging
 Version  : 4.5.1
-Release  : 38
+Release  : 39
 URL      : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-4.5.1.tar.gz
 Source0  : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-4.5.1.tar.gz
 Summary  : Oslo Messaging API
@@ -63,6 +63,7 @@ BuildRequires : python-dev
 BuildRequires : python-mimeparse-python
 BuildRequires : python-mock
 BuildRequires : python-subunit-python
+BuildRequires : python3-dev
 BuildRequires : pytz-python
 BuildRequires : pyzmq-python
 BuildRequires : qpid-python-python
@@ -81,6 +82,7 @@ BuildRequires : traceback2-python
 BuildRequires : trollius-python
 BuildRequires : unittest2-python
 BuildRequires : wrapt-python
+Patch1: 0003-support-python-3.patch
 
 %description
 Oslo Messaging Library
@@ -123,13 +125,16 @@ python components for the oslo.messaging package.
 
 %prep
 %setup -q -n oslo.messaging-4.5.1
+%patch1 -p1
 
 %build
 python2 setup.py build -b py2
+python3 setup.py build -b py3
 
 %install
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot}
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 
 %files
 %defattr(-,root,root,-)
