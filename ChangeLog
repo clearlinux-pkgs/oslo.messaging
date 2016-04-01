@@ -1,6 +1,19 @@
 CHANGES
 =======
 
+4.6.1
+-----
+
+* Fix Break in Windows platforms
+
+4.6.0
+-----
+
+* Always delete exc_info tuple, even if reply fails
+* Fail quickly if there on bad password
+* Updated from global requirements
+* Always set all socket timeouts
+
 4.5.1
 -----
 
