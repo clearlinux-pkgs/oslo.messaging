@@ -4,7 +4,7 @@
 #
 Name     : oslo.messaging
 Version  : 4.6.1
-Release  : 42
+Release  : 43
 URL      : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-4.6.1.tar.gz
 Source0  : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-4.6.1.tar.gz
 Summary  : Oslo Messaging API
