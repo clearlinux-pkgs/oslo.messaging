@@ -1,25 +1,156 @@
 CHANGES
 =======
 
-4.6.1
+5.5.0
 -----
 
-* Fix Break in Windows platforms
-
-4.6.0
------
-
-* Always delete exc_info tuple, even if reply fails
-* Fail quickly if there on bad password
+* [zmq] Fix message sending when using proxy and not using PUB/SUB
+* AMQP 1.0 - create only one Cyrus SASL configuration for the tests
 * Updated from global requirements
-* Always set all socket timeouts
+* [zmq] Remove redundant Envelope class
+* [zmq] Properly stop ZmqServer
+* [Trival] fix a typo nit
+* [zmq] Fix backend router port for proxy
 
-4.5.1
+5.4.0
 -----
 
+* [zmq] Remove unused Request.close method
+* Add query paramereters to TransportURL
+* Fix temporary problems with pika unit tests
+* [zmq] Periodic updates of endpoints connections
+
+5.3.0
+-----
+
+* Modify info of default_notification_exchange
+* Imported Translations from Zanata
+* [zmq] Remove rpc_zmq_concurrency option
+* [zmq] Fix timeout in ThreadingPoller.poll
+* Fix typo: 'olso' to 'oslo'
+* Updated from global requirements
+* [zmq] Don't skip non-direct message types
+* [zmq] Refactoring of zmq client
+* [impl_rabbit] Remove deprecated get_expiration method
+
+5.2.0
+-----
+
+* Updated from global requirements
+* [AMQP 1.0] Randomize host list connection attempts
+* Modify the TransportURL's docstrings
+* Fix problems after refactoring RPC client
+* deprecate usage of transport aliases
+* Documents recommended executor
+* kafka: Deprecates host, port options
+* Updated from global requirements
+* Add reno for releasenotes management
+* Remove logging from serialize_remote_exception
+* [kafka] Add several bootstrap servers support
+* Fix consuming from missing queues
+* Fix bug with version_cap and target.version in RPCClient
+* Make TransportURL.parse aware of transport_url
+* rabbit: Deprecates host, port, auth options
+* Remove deprecated localcontext
+* zeromq: Deprecates host, port options
+* Reorganize the AMQP 1.0 driver source files
+* Implements configurable connection factory
+* The need to wait for a given time is no longer valid in 3.2+
+* [zmq] Reduce object serialization on router proxy
+* Updated from global requirements
+* [zmq] Add backend ROUTER to increase bandwidth
+* [zmq] Add Sentinel instructions to deployment guide
+* Rabbit driver: failure of rpc-calls with float timeout
+
+5.1.0
+-----
+
+* Use eventletutils to check is_monkey_patched
+* remove feature branch from master .gitreview
+* [zmq] Second router proxy doesn't dispatch messages properly
+* Add parse.unquote to transport_url
+* Fix simulator stat printing
+* Use single producer and to avoid an exchange redeclaration
+* [zmq] Redesign router proxy
+* Add feature branch to .gitreview file
+* Remove Beta development status from classifiers
+
+5.0.0
+-----
+
+* Updated from global requirements
+* Fixes sumulator.py signal_handler logic
+* Refactor RPC client
+* Send notify if notify=True passed
+* Improves exception handling and logging
+* Implements pika thread safe connection
+* Fix incorrect parameters order in assertIn call
+* Update the RPC cast() documentation
+* Fix unstable work of cast func tests
+* [zmq] Reduce threading from python proxy
+* Imported Translations from Zanata
+* use thread safe fnmatch
+* Refactor base interfaces
+* Gracefully handle missing TCP_USER_TIMEOUT
+* Simulator: handle SIGINT and SIGTERM signals
+* Updated from global requirements
+* Log the unique_id in listener than msg_id
+* serializer: deprecate RequestContextSerializer
+* Don't set html_last_updated_fmt without git
+* Amqp driver send method temporary work-around
+* Updated from global requirements
+* Updated from global requirements
+* Allow simulator to be launched from arbitrary directory
+* [zmq] Fix cast message loss in simulator
+* Make transport_url config option secret
+* Fix oslo.messaging for Mac OS X
+* Refactor driver's listener interface
+* [kafka] Do not remove kafka_client during reset
+* Updated from global requirements
+* Replace expriration_time by timer
+* [zmq] Reduce number of connections
+* Move server related logic from dispatchers
+* Fix typos in Oslo.messaging files
+* Fix Break in Windows platforms
+* [py34] replace file() with open()
+* Claim python3 compatability for Newton onwards
+* Simulator: collect error stats
+* Simulator: make parameter wait_after_msg float
+* Update CheckForLoggingIssues hacking rule from keystone
+* Simulator: align stats to whole seconds
+* Support python3 in simulator.py
+* Fix typo passend should be passenv
+* Always set all socket timeouts
+* Add a py34 functional test for rabbit
+* Small fixes
+* Use only unique topics for the Kafka driver
+* [zmq] Refactoring consumer side
+* [Kafka] Ensure a topics before consume messages
+* Fix problems during unstable network
+* Missing version parameter in can_send_version()
 * Bump rabbit_transient_queues_ttl to 30 mins
+* Explicitly exclude tests from bandit scan
 * Fix Notification listener blocking behavior
-* Update .gitreview for stable/mitaka
+* Pika: fix sending fanout messages
+* Revert "Ensure the json result type is bytes on Python 3"
+* Replace deprecated LOG.warn with LOG.warning
+* Simulator: store results in JSON format
+* Simulator: calculate message latency statistics
+* Fix the driver shutdown/failover logic
+* Always delete exc_info tuple, even if reply fails
+* Do not leak Listeners on failover
+* Simulator: always use random messages for time-bound tests
+* Fallback if git is absent
+* Simulator: implement own random generator instead of scipy
+* Simulator: fix batch-notify-server command
+* Work with kombu from upstream
+* Fail quickly if there on bad password
+* [zmq] Dynamic port range is ignored
+* [zmq] Implement Response and Envelope classes
+* [kafka] Use notification priority
+* Make simulator more asynchronous
+* Adds exhange declaration on sender's side
+* Updated from global requirements
 
 4.5.0
 -----
@@ -30,6 +161,7 @@ CHANGES
 * Fix a minor syntax error in a log statement
 * Use PortOpt on kafka_default_port
 * Added duration to notify server/client
+* Ensure the json result type is bytes on Python 3
 * Improves logging
 * Use more efficient mask_dict_password to mask password
 * Improves poller's stop logic
@@ -95,6 +227,7 @@ CHANGES
 * Let PikaDriver inherit base.BaseDriver
 * Improve simulator.py
 * Fixed some warnings about imports and variable
+* test: Don't test message's reply timeout
 * Updated from global requirements
 * Adds document and configuration guide
 * [zmq] Support KeyboardInterrupt for broker
@@ -484,7 +617,7 @@ CHANGES
 1.12.0
 ------
 
-* Fix condition in _publish_and_retry_on_missing_exchange(
+* Fix condition in _publish_and_retry_on_missing_exchange()
 * Set places to 0 in self.assertAlmostEqual()
 * Allow to remove second _send_reply() call
 * Don't create a new channel in RabbitMQ Connection.reset()
@@ -1019,7 +1152,7 @@ CHANGES
 1.2.0a10
 --------
 
-* Add a Notifier.prepare(
+* Add a Notifier.prepare() method
 
 1.2.0a9
 -------
