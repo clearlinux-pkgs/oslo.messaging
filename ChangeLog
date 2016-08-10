@@ -1,6 +1,40 @@
 CHANGES
 =======
 
+5.6.0
+-----
+
+* Fix pika functional tests
+* fix a typo in impl_rabbit.py
+* Updated from global requirements
+* Fix syntax error on notification listener docs
+* Delete fanout queues on gracefully shutdown
+* Properly cleanup listener and driver on simulator exit
+* [zmq] Let proxy serve on a static port numbers
+* Introduce TTL for idle connections
+* Fix parameters of assertEqual are misplaced
+* Fix misstyping issue
+* Updated from global requirements
+* Updated from global requirements
+* notify: add a CLI tool to manually send notifications
+* Add deprecated relnote for max_retries rabbit configuration option
+* [zmq] Add py34 configuration for functional tests
+* [zmq] Merge publishers
+* Add Python 3.5 classifier and venv
+* Replace assertEqual(None, *) with assertIsNone in tests
+* Updated from global requirements
+* [zmq] Use json/msgpack instead of pickle
+* [zmq] Refactor publishers
+* Add Python 3.4 functional tests for AMQP 1.0 driver
+* tests: allow to override the functionnal tests suite args
+* [zmq] Additional configurations for f-tests
+* Remove discover from test-requirements
+* tests: rabbitmq failover tests
+* Imported Translations from Zanata
+* Updated from global requirements
+* Remove rabbitmq max_retries
+* Config: no need to set default=None
+
 5.5.0
 -----
 
@@ -23,6 +57,7 @@ CHANGES
 5.3.0
 -----
 
+* Improve the impl_rabbit logging
 * Modify info of default_notification_exchange
 * Imported Translations from Zanata
 * [zmq] Remove rpc_zmq_concurrency option
