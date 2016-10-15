@@ -1,15 +1,57 @@
 CHANGES
 =======
 
+5.10.0
+------
+
+* Updated from global requirements
+
+5.9.0
+-----
+
+* Updated from global requirements
+* [zmq] Host name and target in socket identity
+
+5.8.0
+-----
+
+* [zmq] Make zmq_immediate configurable
+* Fix calculating of duration in simulator.py
+* [zmq] Redis unavailability is not critical
+* [zmq] Discover new publisher proxy
+* Clean outdated docstring and comment
+* [AMQP 1.0] small fixes to improve timer scalability
+* Add docstring for get_notification_transport
+* Add warning when credential is not specified for each host
+* Updated from global requirements
+* [zmq] Implement retries for unacknowledged CASTs
+* Fix the help info format
+
+5.7.0
+-----
+
+* Move zmq driver options into its own group
+* Log a warning when connected to a routable message bus
+* Updated from global requirements
+* [AMQP 1.0] Add link credit configuration options
+* Updated from global requirements
+* [AMQP 1.0] AMQP 1.0 Driver User Guide Document update
+* AMQP 1.0 Driver Architecture Overview Document
+* Remove the max_send_retries option
+
 5.6.0
 -----
 
 * Fix pika functional tests
+* [zmq] Use zmq.IMMEDIATE option for round-robin
 * fix a typo in impl_rabbit.py
 * Updated from global requirements
+* [AMQP 1.0] Cancel response treatment for detached link
 * Fix syntax error on notification listener docs
 * Delete fanout queues on gracefully shutdown
+* Set the default link property to allow message acks
 * Properly cleanup listener and driver on simulator exit
+* Fix a timer leak in the AMQP 1.0 driver
 * [zmq] Let proxy serve on a static port numbers
 * Introduce TTL for idle connections
 * Fix parameters of assertEqual are misplaced
@@ -24,12 +66,15 @@ CHANGES
 * Replace assertEqual(None, *) with assertIsNone in tests
 * Updated from global requirements
 * [zmq] Use json/msgpack instead of pickle
+* [AMQP 1.0] Add configuration parameters for send message deadline
 * [zmq] Refactor publishers
+* Re-factor the AMQP 1.0 addressing semantics
 * Add Python 3.4 functional tests for AMQP 1.0 driver
 * tests: allow to override the functionnal tests suite args
 * [zmq] Additional configurations for f-tests
 * Remove discover from test-requirements
 * tests: rabbitmq failover tests
+* [AMQP 1.0] Add acknowledge and requeue handling for incoming message
 * Imported Translations from Zanata
 * Updated from global requirements
 * Remove rabbitmq max_retries
@@ -41,8 +86,10 @@ CHANGES
 * [zmq] Fix message sending when using proxy and not using PUB/SUB
 * AMQP 1.0 - create only one Cyrus SASL configuration for the tests
 * Updated from global requirements
+* Refactor AMQP 1.0 command task to support timers
 * [zmq] Remove redundant Envelope class
 * [zmq] Properly stop ZmqServer
+* Refactor link management to support link recovery
 * [Trival] fix a typo nit
 * [zmq] Fix backend router port for proxy
 
@@ -82,6 +129,7 @@ CHANGES
 * Add reno for releasenotes management
 * Remove logging from serialize_remote_exception
 * [kafka] Add several bootstrap servers support
+* Add the proper branch back to .gitreview
 * Fix consuming from missing queues
 * Fix bug with version_cap and target.version in RPCClient
 * Make TransportURL.parse aware of transport_url
