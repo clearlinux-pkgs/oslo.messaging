@@ -1,14 +1,75 @@
 CHANGES
 =======
 
+5.11.0
+------
+
+* Fix typos in addressing.py and setup.cfg
+* Updated from global requirements
+* Record length of queues for ReplyWaiters
+* rabbit: Don't prefetch when batch_size is set
+* [AMQP 1.0] Avoid unnecessary thread switch on ack
+* [zmq] Fix issues with broken messages on proxies
+* [zmq] Maintain several redis hosts
+* Removed redundant 'the'
+* Fix a typo in server.py
+* [document] The example which is written in the developer guide of 'Notification Listener' doesn't work
+* Enable release notes translation
+* cast() and RPC replies should not block waiting for endpoint to ack
+* [simulator] Automatic stopping of rpc-servers
+* Fix whitespace formatting issue
+* Properly deserializes built-in exceptions
+* [zmq] Fix send_cast in AckManager
+* Remove debug logs from fast path
+* [zmq] Routing table refactoring, dynamic direct connections
+* Fix simulator bool command line args
+* Replace 'the' with 'to' in docstring
+* Remove default=None when set value in Config
+* [zmq] Add acks from proxy for PUB/SUB messages
+* [zmq] Refactor consumers and incoming messages
+* [zmq] Make second ROUTER socket optional for proxy
+* Use method fetch_current_thread_functor from oslo.utils
+* [zmq] Fix ZmqSocket.send_string
+* [zmq] Remove unused methods from executors
+* [zmq] Added a processing to handle ImportError in Redis plugin of Matchmaker
+* modify the home-page info with the developer documentation
+* Set the valid choices for the rabbit login methods
+* [zmq] Unify delimeters
+* [zmq] Fix fanout without PUB/SUB
+* [zmq] Send immediate ack after message receiving
+* Corrects documentation typo
+* [zmq] Remove unnecessary subscriptions from SubConsumer
+* Fixups to the inline documentation
+* Fix consuming from unbound reply queue
+* Add configurable serialization to pika
+* [zmq] Remove ZmqSocket.close_linger attribute
+* [zmq] Make ZMQ TCP keepalive options configurable
+* [zmq] Fix TestZmqAckManager periodic failure
+* [zmq] Make ThreadingPoller work with ZmqSocket
+* Fix notify filter when data item is None
+* [zmq] Rename rpc_cast_timeout option
+* [AMQP 1.0] Update setup test environment dispatch router backend
+* Allow dispatcher to restrict endpoint methods
+* [AMQP 1.0] Add Acknowledgement and Batch Notification Topics
+* Update reno for stable/newton
+* [kafka] invoke TypeError exception when 'listen()' method of KafkaDriver is called
+* [zmq] Proxy has to skip broken multi-part message
+* Add Documentation String for PikaDriver
+* [zmq] Implement retries for unacknowledged CALLs
+
 5.10.0
 ------
 
+* [AMQP 1.0] Make the default settlement behavior configurable
+* [zmq] Eliminate GreenPool from GreenPoller
+* Avoid sending cast after server shutdown in functional test
+* [zmq] Update ZMQ-driver documentation
 * Updated from global requirements
 
 5.9.0
 -----
 
+* [zmq] Add --log-file option to zmq-proxy
 * Updated from global requirements
 * [zmq] Host name and target in socket identity
 
