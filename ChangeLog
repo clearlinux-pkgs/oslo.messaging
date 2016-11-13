@@ -1,6 +1,21 @@
 CHANGES
 =======
 
+5.12.0
+------
+
+* Updated from global requirements
+* Updated from global requirements
+* Using assertIsNone() instead of assertEqual(None)
+* Change assertTrue(isinstance()) by optimal assert
+* [zmq] Don't fallback to topic if wrong server specified
+* [TrivialFix] Replace old style assertions with new style assertions
+* [TrivialFix] Fix typo in oslo.messaging
+* [simulator] Fix a message length generator usage
+* Update .coveragerc after the removal of respective directory
+* [sentinels] Fix hosts extracting and slaves usage
+* [zmq] SUB-PUB local proxy
+
 5.11.0
 ------
 
