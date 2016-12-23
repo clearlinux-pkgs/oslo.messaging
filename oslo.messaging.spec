@@ -4,7 +4,7 @@
 #
 Name     : oslo.messaging
 Version  : 5.12.0
-Release  : 49
+Release  : 50
 URL      : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.12.0.tar.gz
 Source0  : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.12.0.tar.gz
 Summary  : Oslo Messaging API
