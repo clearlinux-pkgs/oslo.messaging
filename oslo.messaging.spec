@@ -6,7 +6,7 @@
 #
 Name     : oslo.messaging
 Version  : 5.12.0
-Release  : 52
+Release  : 53
 URL      : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.12.0.tar.gz
 Source0  : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.12.0.tar.gz
 Source99 : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.12.0.tar.gz.asc
@@ -15,6 +15,31 @@ Group    : Development/Tools
 License  : Apache-2.0
 Requires: oslo.messaging-bin
 Requires: oslo.messaging-python
+Requires: PyYAML
+Requires: WebOb
+Requires: amqp
+Requires: cachetools
+Requires: debtcollector
+Requires: eventlet
+Requires: futures
+Requires: futurist
+Requires: greenlet
+Requires: kombu
+Requires: monotonic
+Requires: oslo.config
+Requires: oslo.context
+Requires: oslo.i18n
+Requires: oslo.log
+Requires: oslo.middleware
+Requires: oslo.serialization
+Requires: oslo.service
+Requires: oslo.utils
+Requires: pbr
+Requires: pika
+Requires: pika-pool
+Requires: retrying
+Requires: six
+Requires: stevedore
 BuildRequires : Babel-python
 BuildRequires : Jinja2-python
 BuildRequires : PyYAML-python
@@ -38,7 +63,6 @@ BuildRequires : flake8-python
 BuildRequires : futures-python
 BuildRequires : greenlet-python
 BuildRequires : hacking-python
-BuildRequires : imagesize-python
 BuildRequires : iso8601-python
 BuildRequires : kombu-python
 BuildRequires : linecache2-python
@@ -106,23 +130,6 @@ bin components for the oslo.messaging package.
 %package python
 Summary: python components for the oslo.messaging package.
 Group: Default
-Requires: PyYAML-python
-Requires: WebOb-python
-Requires: amqp-python
-Requires: debtcollector-python
-Requires: eventlet-python
-Requires: futures-python
-Requires: greenlet-python
-Requires: kombu-python
-Requires: monotonic-python
-Requires: oslo.context-python
-Requires: oslo.i18n-python
-Requires: oslo.log-python
-Requires: oslo.middleware-python
-Requires: oslo.serialization-python
-Requires: oslo.service-python
-Requires: oslo.utils-python
-Requires: six-python
 
 %description python
 python components for the oslo.messaging package.
@@ -133,12 +140,12 @@ python components for the oslo.messaging package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1484557734
+export SOURCE_DATE_EPOCH=1487901162
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1484557734
+export SOURCE_DATE_EPOCH=1487901162
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
