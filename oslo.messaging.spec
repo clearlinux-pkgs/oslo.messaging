@@ -6,7 +6,7 @@
 #
 Name     : oslo.messaging
 Version  : 5.12.0
-Release  : 53
+Release  : 54
 URL      : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.12.0.tar.gz
 Source0  : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.12.0.tar.gz
 Source99 : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.12.0.tar.gz.asc
@@ -140,12 +140,12 @@ python components for the oslo.messaging package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1487901162
+export SOURCE_DATE_EPOCH=1489032732
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1487901162
+export SOURCE_DATE_EPOCH=1489032732
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
