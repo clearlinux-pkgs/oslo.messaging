@@ -6,7 +6,7 @@
 #
 Name     : oslo.messaging
 Version  : 5.12.0
-Release  : 54
+Release  : 55
 URL      : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.12.0.tar.gz
 Source0  : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.12.0.tar.gz
 Source99 : http://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.12.0.tar.gz.asc
@@ -40,77 +40,11 @@ Requires: pika-pool
 Requires: retrying
 Requires: six
 Requires: stevedore
-BuildRequires : Babel-python
-BuildRequires : Jinja2-python
-BuildRequires : PyYAML-python
-BuildRequires : Pygments-python
-BuildRequires : Sphinx-python
-BuildRequires : WebOb-python
-BuildRequires : aioeventlet-python
-BuildRequires : amqp-python
-BuildRequires : anyjson-python
-BuildRequires : configparser-python
-BuildRequires : coverage-python
-BuildRequires : debtcollector-python
-BuildRequires : discover-python
-BuildRequires : docutils-python
-BuildRequires : eventlet-python
-BuildRequires : extras
-BuildRequires : extras-python
-BuildRequires : fasteners-python
-BuildRequires : fixtures-python
-BuildRequires : flake8-python
-BuildRequires : futures-python
-BuildRequires : greenlet-python
-BuildRequires : hacking-python
-BuildRequires : iso8601-python
-BuildRequires : kombu-python
-BuildRequires : linecache2-python
-BuildRequires : markupsafe-python
-BuildRequires : mccabe-python
-BuildRequires : monotonic-python
-BuildRequires : mox3-python
-BuildRequires : msgpack-python-python
-BuildRequires : netaddr-python
-BuildRequires : netifaces-python
-BuildRequires : oslo.concurrency-python
-BuildRequires : oslo.config-python
-BuildRequires : oslo.context-python
-BuildRequires : oslo.i18n-python
-BuildRequires : oslo.log-python
-BuildRequires : oslo.middleware-python
-BuildRequires : oslo.serialization-python
-BuildRequires : oslo.service-python
-BuildRequires : oslo.utils-python
-BuildRequires : oslosphinx-python
-BuildRequires : oslotest-python
 BuildRequires : pbr
-BuildRequires : pep8-python
 BuildRequires : pip
-BuildRequires : pyflakes-python
 BuildRequires : python-dev
-BuildRequires : python-mimeparse-python
-BuildRequires : python-mock
-BuildRequires : python-subunit-python
 BuildRequires : python3-dev
-BuildRequires : pytz-python
-BuildRequires : pyzmq-python
-BuildRequires : qpid-python-python
-BuildRequires : redis-python
-BuildRequires : requests-python
 BuildRequires : setuptools
-BuildRequires : six
-BuildRequires : six-python
-BuildRequires : stevedore-python
-BuildRequires : testrepository-python
-BuildRequires : testscenarios
-BuildRequires : testscenarios-python
-BuildRequires : testtools
-BuildRequires : testtools-python
-BuildRequires : traceback2-python
-BuildRequires : trollius-python
-BuildRequires : unittest2-python
-BuildRequires : wrapt-python
 
 %description
 Oslo Messaging Library
@@ -140,12 +74,12 @@ python components for the oslo.messaging package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1489032732
+export SOURCE_DATE_EPOCH=1489272172
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1489032732
+export SOURCE_DATE_EPOCH=1489272172
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
