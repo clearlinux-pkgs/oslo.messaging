@@ -1,16 +1,151 @@
 CHANGES
 =======
 
+5.19.0
+------
+
+* Updated from global requirements
+* Remove self.mox
+* Move decorator updated_kwarg_default_value to right place
+
+5.18.0
+------
+
+* Remove old messaging notify driver alias
+* [Fix gate]Update test requirement
+* Updated from global requirements
+* Allow checking if notifier is enabled
+* RabbitMQ: Standardize SSL parameter names
+* drop topic keyword from Notifier
+* Validate the transport url query string
+* drivers: use common.ConfigOptsProxy everywhere
+* Stop using oslotest.mockpatch
+* tests: don't run functional tests in parallel
+* rabbit: make ack/requeue thread-safe
+* Fix releasenotes
+* Remove mox3 from test-requirements.txt
+* Updated from global requirements
+* [zmq] Update configurations documentation
+* Fix type of the kafka_consumer_timeout option
+* [zmq] Dynamic connections send failure
+* support kombu4
+* Test:Use unittest.mock on Python 3
+* Fix the typo
+* pbr.version.VersionInfo needs package name (oslo.xyz and not oslo_xyz)
+* [zmq] Properly analyse `use_dynamic_connections` option
+* [zmq] Dummy add value aging mechanism
+* kafka: skip multiple servers tests
+* kafka: ensure topics are created
+* kafka: fix python3 exception
+* kafka: Remove testing hack for kafka
+* [zmq] Failure of dynamic connections fanout
+* Update reno for stable/ocata
+* Return list of addresses for IPV4 and IPV6
+
+5.17.0
+------
+
+* [zmq] Dynamic connections failover
+* [zmq] Fix py35 gate
+* [zmq] Use more stable configuration in voting job
+* Remove references to Python 3.4
+* [AMQP 1.0] Fix SSL client authentication
+* [zmq] Support py35 testenv
+* [zmq] Distinguish Round-Robin/Fanout socket sending mode
+* tests: cleanup monkey path
+* [AMQP 1.0] Resend messages that are released or modified
+* gate: Remove useless files
+* [zmq] Redis TTL for values
+* eventlet is no more a hard dependency
+* [AMQP 1.0] Propagate authentication errors to caller
+* ensure we set channel in lock
+* tox: use already installed kafka if present
+* kafka: remove no really implemented feature
+* kafka: return to poller when timeout is reach
+* kafka: Don't hide unpack/unserialize exception
+* kafka: timeout is in milliseconds
+* kafka: disable batch for functional tests
+* kafka: Remove Producer singleton
+* Moving driver to new kafka-python version
+* tox: rename zeromq target
+* tests: make rabbit failover failure more helpful
+* [zmq] Refactor make `zmq_address.target_to_key` a universal method
+* Updated from global requirements
+* [zmq] Restore static direct connections
+* reject when skipping failed messages
+* fix one typo
+* [AMQP 1.0] Setup the amqp1 test environment on ubuntu
+* test_rabbitmq: remove dead code
+
+5.16.0
+------
+
+* Updated from global requirements
+* Replace mox with mock
+* tests: fix test-setup.sh
+* tests: remove useless debug
+* [rabbit] Log correct topic on cast/call
+
+5.15.0
+------
+
+* Updated from global requirements
+* kafka separate unit/functionnal tests
+* Add bindep.txt/test-setup.sh to prepare the system
+* [zmq] Matchmaker redis available time
+
+5.14.0
+------
+
+* [AMQP 1.0] Simplify the I/O event loop code
+* [zmq] Support message versions for rolling upgrades
+* [zmq] Fix non voting gate jobs
+* Fix transport url with empty port
+* Remove ordering assumption from functional test
+* Periodically purge sender link cache
+
+5.13.0
+------
+
+* Remove small job timeout
+* Register opts if we're going to check conf.transport_url in parse()
+* [doc] Fix three typos
+* [zmq] Fix zmq-specific f-tests from periodic hangs
+* [zmq] Fix functional gates proxy/pub-sub
+* Show team and repo badges on README
+* [zmq] Send fanouts without pub/sub in background
+* Use assertGreater(len(x), 0) instead of assertTrue(len(x) > 0)
+* Add Constraints support
+* Replace six.iteritems() with .items()
+* [zmq] Fix configuration for functional gate job
+* Document the transport backend driver interface
+* Fix a docstring typo in impl_pika.py
+* [sentinel] Move master/slave discovering from __init__
+* rabbit: on reconnect set socket timeout after channel is set
+* Updated from global requirements
+* [zmq] Don't create real matchmaker in unit tests
+* update srouce doc pika_driver.rst the charactor then to than
+* Remove useless logging import statements
+* rabbit: Avoid busy loop on epoll_wait with heartbeat+eventlet
+* [zmq] Refactor receivers
+* [zmq] Cleanup changes to zmq-specific f-tests
+* Updated from global requirements
+* This patch cleans up the 'notification_listener.rst' documetion by removing some class which don't exist and adding some function which exist in current source
+* Remove nonexistent functions from documentation
+* Replace retrying with tenacity
+
 5.12.0
 ------
 
 * Updated from global requirements
 * Updated from global requirements
+* Remove the temporary hack in code
 * Using assertIsNone() instead of assertEqual(None)
 * Change assertTrue(isinstance()) by optimal assert
 * [zmq] Don't fallback to topic if wrong server specified
 * [TrivialFix] Replace old style assertions with new style assertions
 * [TrivialFix] Fix typo in oslo.messaging
+* [simulator] Fix transport_url usage
 * [simulator] Fix a message length generator usage
 * Update .coveragerc after the removal of respective directory
 * [sentinels] Fix hosts extracting and slaves usage
