@@ -1,6 +1,17 @@
 CHANGES
 =======
 
+5.20.0
+------
+
+* serializer: remove deprecated RequestContextSerializer
+* Updated from global requirements
+* Add HACKING.rst
+* [zmq] pass a dummy TransportURL to register_opts
+* Fix simulator's use of Notifier - use 'topics' not 'topic'
+* Trivial: Add executor 'threading' in docstring
+* Deprecate parameter aliases
+
 5.19.0
 ------
 
