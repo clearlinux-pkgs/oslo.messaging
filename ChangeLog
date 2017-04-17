@@ -1,6 +1,12 @@
 CHANGES
 =======
 
+5.22.0
+------
+
+* Updated from global requirements
+* Remove usage of parameter enforce_type
+
 5.21.0
 ------
 
@@ -15,6 +21,7 @@ CHANGES
 
 * serializer: remove deprecated RequestContextSerializer
 * Updated from global requirements
+* Deprecate username/password config options in favor of TRANSPORT_URL
 * Add HACKING.rst
 * Break user credentials from host at the rightmost '@'
 * [zmq] Prevent access to rpc_response_timeout

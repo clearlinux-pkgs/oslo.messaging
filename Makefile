@@ -1,5 +1,5 @@
 PKG_NAME := oslo.messaging
-URL := http://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.21.0.tar.gz
+URL := https://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.22.0.tar.gz
 
 
 include ../common/Makefile.common
