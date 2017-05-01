@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEB6CCA1483FA74EC (infra-root@openstack.org)
 #
 Name     : oslo.messaging
-Version  : 5.22.0
-Release  : 60
-URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.22.0.tar.gz
-Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.22.0.tar.gz
-Source99 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.22.0.tar.gz.asc
+Version  : 5.23.0
+Release  : 61
+URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.23.0.tar.gz
+Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.23.0.tar.gz
+Source99 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-5.23.0.tar.gz.asc
 Summary  : Oslo Messaging API
 Group    : Development/Tools
 License  : Apache-2.0
@@ -46,8 +46,8 @@ BuildRequires : setuptools
 ========================
 Team and repository tags
 ========================
-.. image:: http://governance.openstack.org/badges/oslo.messaging.svg
-:target: http://governance.openstack.org/reference/tags/index.html
+.. image:: https://governance.openstack.org/badges/oslo.messaging.svg
+:target: https://governance.openstack.org/reference/tags/index.html
 
 %package bin
 Summary: bin components for the oslo.messaging package.
@@ -66,16 +66,19 @@ python components for the oslo.messaging package.
 
 
 %prep
-%setup -q -n oslo.messaging-5.22.0
+%setup -q -n oslo.messaging-5.23.0
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1492457757
+export SOURCE_DATE_EPOCH=1493680345
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1492457757
+export SOURCE_DATE_EPOCH=1493680345
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
