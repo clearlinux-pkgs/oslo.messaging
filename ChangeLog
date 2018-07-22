@@ -1,12 +1,263 @@
 CHANGES
 =======
 
+8.1.0
+-----
+
+* Bump py-amqp to >= 2.3.0
+
+8.0.0
+-----
+
+* Do not access the connection's socket during error callback
+* Fix debug log message - missing argument
+* py37: deal with Exception repr changes
+* py37: drop use of 'async' as parameter name
+* Remove transport aliases support
+* Moving stestr to correct package order in test-requirements.txt
+* Switch to stestr
+* No longer allow redundant calls to server start()
+* Fix the bandit security linter test
+
+7.0.0
+-----
+
+* Replace 'raise StopIteration' with 'return'
+* Remove fake\_rabbit configuration option
+* Add release notes link to README
+* Add ZeroMQ deprecation release note
+
+6.5.0
+-----
+
+* Fix oslo messaging gating
+* Enable RPC call monitoring in AMQP 1.0 driver
+* Mark the ZeroMQ driver deprecated
+
+6.4.1
+-----
+
+* fix tox python3 overrides
+* Add warning output if failed to rebuild exception when deserialize
+* Correct usage of transport\_url in example
+
+6.4.0
+-----
+
+* Add ConfFixture.transport\_url
+
+6.3.0
+-----
+
+* Convert legacy zuul jobs to v3
+* [rabbitmq] Implement active call monitoring
+* Make oslo.messaging-devstack-amqp1 job non-voting
+* Remove stale pip-missing-reqs tox test
+* Add a skeleton for a v3-native devstack job
+* Add heartbeat() method to RpcIncomingMessage
+* Trivial: Update pypi url to new url
+* Add kafka for python 3 functional test
+
+6.2.0
+-----
+
+* Move requirements for the optional drivers (amqp1, kafka)
+* set default python to python3
+* fix lower constraints and uncap eventlet
+
+6.1.0
+-----
+
+* Revert "rabbit: Don't prefetch when batch\_size is set"
+* Update kafka and dsvm jobs
+* add lower-constraints job
+* remove zmq tests
+* Updated from global requirements
+
+6.0.0
+-----
+
+* Remove the deprecated Pika driver
+* update configuration for qdrouter v1.0.0
+* Updated from global requirements
+* Add restart() method to DecayingTimer
+
+5.36.0
+------
+
+* Imported Translations from Zanata
+* Add rabbitmq-server for platform:rpm into bindep.txt
+* Restore devstack project name in amqp1 test
+* Switch from pip\_missing\_reqs to pip\_check\_reqs
+* Add kafka config options for security (ssl/sasl)
+* Zuul: Remove project name
+* Modify grammatical errors
+* Fixed telemetry integration zuul jobs
+* Zuul: Remove project name
+* Updated from global requirements
+* Imported Translations from Zanata
+* Update reno for stable/queens
+* Updated from global requirements
+* Imported Translations from Zanata
+* Add support for synchronous commit
+* Update telemetry integration playbooks
+* Follow the new PTI for document build
+
+5.35.0
+------
+
+* Add kafka driver vhost emulation
+* Updated from global requirements
+* Create doc/requirements.txt
+* Update kafka functional test
+* Imported Translations from Zanata
+* Updated from global requirements
+
+5.34.1
+------
+
+* Imported Translations from Zanata
+* Avoid tox\_install.sh for constraints support
+* rabbitmq: don't wait for message ack/requeue
+* Provide bindep\_profile in openstack-tox job setup
+* Updated from global requirements
+* Add zmq packages that are no longer in bindep-fallback
+* don't convert generator to list unless required
+* sort when using groupby
+
+5.34.0
+------
+
+* Remove setting of version/release from releasenotes
+* Updated from global requirements
+* Updated from global requirements
+* Catch socket.timeout when doing heartbeat\_check
+* Updated from global requirements
+* fix batch handling
+* Remove stable/newton from zuul settings
+* Zuul: add file extension to playbook path
+
+5.33.1
+------
+
+* Move legacy zuulv3 tests into oslo.messaging repo
+* Imported Translations from Zanata
+* Flesh out transport\_url help
+* Fix typo in contributor docs title
+
+5.33.0
+------
+
+* Fix default value of RPC dispatcher access\_policy
+* Fix wrong transport warnings in functional tests
+* Updated from global requirements
+
+5.32.0
+------
+
+* Updated from global requirements
+* Warn when wrong transport instance is used
+* Fix some reST field lists in docstrings
+* Remove pbr version from setup.py
+* Suppress excessive debug logs when consume rabbit
+* Fix use of print function on python3
+
+5.31.0
+------
+
+* Remove envelope argument from driver send() interface
+* Imported Translations from Zanata
+* Updated from global requirements
+* Update amqp 1.0 driver deployment guide
+* Prevent rabbit from raising unexpected exceptions
+* Updated from global requirements
+* Remove unnecessary setUp function in testcase
+* Add licenses and remove unused import in doc/source/conf.py
+* Ensure RPC endpoint target attribute is correct
+* Fix a typo
+* Update links in README
+* Updated from global requirements
+* Class-level \_exchanges in FakeExchangeManager
+* fix 'configration' typo
+* Update reno for stable/pike
+* Add support for virtual hosts
+* Remove the test that counts kombu connect calls
+
+5.30.0
+------
+
+* Updated from global requirements
+* Update URLs in documents according to document migration
+* Add monkey\_patch to demo code
+
+5.29.0
+------
+
+* switch from oslosphinx to openstackdocstheme
+* update the docs url in the readme
+* rearrange content to fit the new standard layout
+* Updated from global requirements
+* Enable some off-by-default checks
+
+5.28.0
+------
+
+* Updated from global requirements
+* Add kafka\_driver directory
+
+5.27.0
+------
+
+* Updated from global requirements
+* Fix html\_last\_updated\_fmt for Python3
+* Add note for blocking executor deprecation
+* Fix rabbitmq driver with blocking executor
+* Build universal wheels
+* Updated from global requirements
+* Fix serializer tests
+* deprecated blocking executor
+
+5.26.0
+------
+
+* Updated from global requirements
+* Clean up the TransportURL documentation
+* Mark the Pika driver as deprecated
+
+5.25.0
+------
+
+* Updated from global requirements
+* Updated from global requirements
+* Add missing {posargs:} to AMQP 1.0 functional tests
+* rabbit: restore synchronous ack/requeue
+
+5.24.2
+------
+
+* Updated from global requirements
+* [AMQP 1.0] Properly shut down test RPC server
+
+5.24.1
+------
+
+* Updated from global requirements
+* Fix the amqp1 SSL test CA certificate
+* Add get\_rpc\_transport call
+* Disable AMQP 1.0 SSL unit tests
+
+5.24.0
+------
+
+
 5.23.0
 ------
 
+* Fix notification tests not unmocking logging
 * Remove use of mox stubs
 * Fix aliases deprecation
 * tests: fix MultiStrOpt value
+* Retry support for oslo\_messaging\_notifications driver
 
 5.22.0
 ------
@@ -19,6 +270,7 @@ CHANGES
 ------
 
 * Optimize the link address
+* [AMQP 1.0] if RPC call is configured as presettled ignore acks
 * Mock 'oslo\_messaging.notify.\_impl\_routing.LOG' in notifier tests
 * Updated from global requirements
 * Add "ssl" option for amqp driver
