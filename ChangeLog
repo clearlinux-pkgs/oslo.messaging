@@ -1,6 +1,14 @@
 CHANGES
 =======
 
+8.1.2
+-----
+
+* Avoid logging passwords on connection events
+* import zuul job settings from project-config
+* Update UPPER\_CONSTRAINTS\_FILE for stable/rocky
+* Update .gitreview for stable/rocky
+
 8.1.0
 -----
 
