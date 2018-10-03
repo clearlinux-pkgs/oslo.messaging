@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x1A541148054E9E38 (infra-root@openstack.org)
 #
 Name     : oslo.messaging
-Version  : 8.1.2
-Release  : 65
-URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-8.1.2.tar.gz
-Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-8.1.2.tar.gz
-Source99 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-8.1.2.tar.gz.asc
+Version  : 9.0.0
+Release  : 66
+URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.0.0.tar.gz
+Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.0.0.tar.gz
+Source99 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.0.0.tar.gz.asc
 Summary  : Oslo Messaging API
 Group    : Development/Tools
 License  : Apache-2.0
@@ -27,7 +27,6 @@ Requires: coverage
 Requires: debtcollector
 Requires: eventlet
 Requires: fixtures
-Requires: futures
 Requires: futurist
 Requires: greenlet
 Requires: hacking
@@ -44,8 +43,6 @@ Requires: oslo.utils
 Requires: oslotest
 Requires: pbr
 Requires: python-mock
-Requires: pyzmq
-Requires: redis
 Requires: reno
 Requires: six
 Requires: stestr
@@ -96,14 +93,14 @@ python3 components for the oslo.messaging package.
 
 
 %prep
-%setup -q -n oslo.messaging-8.1.2
+%setup -q -n oslo.messaging-9.0.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1537944122
+export SOURCE_DATE_EPOCH=1538572293
 python3 setup.py build
 
 %install
@@ -121,8 +118,6 @@ echo ----[ mark ]----
 %files bin
 %defattr(-,root,root,-)
 /usr/bin/oslo-messaging-send-notification
-/usr/bin/oslo-messaging-zmq-broker
-/usr/bin/oslo-messaging-zmq-proxy
 
 %files license
 %defattr(0644,root,root,0755)

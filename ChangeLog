@@ -1,18 +1,32 @@
 CHANGES
 =======
 
-8.1.2
+9.0.0
 -----
 
+* Refactor GetTransportSadPathTestCase
+* Add release note about deprecated option removals
+* Remove rpc\_backend and ConfFixture.transport\_driver
+* Remove deprecated rabbit options
+* Use templates for cover and lower-constraints
+* Remove deprecated amqp1 options
+* Remove rabbit\_durable\_queues deprecated option
+* Remove default\_{host,port} deprecated options
+* Remove the deprecated ZeroMQ driver
+* Fix the coverage tox tests
 * Avoid logging passwords on connection events
+* add lib-forward-testing-python3 test job
+* add python 3.6 unit test job
 * import zuul job settings from project-config
-* Update UPPER\_CONSTRAINTS\_FILE for stable/rocky
-* Update .gitreview for stable/rocky
+* Call listener stop only if listener is initialized
+* Update reno for stable/rocky
+* Remove setting of DEVSTACK\_GATE\_EXERCISES
 
 8.1.0
 -----
 
 * Bump py-amqp to >= 2.3.0
+* Issue blocking ACK for RPC requests from the consumer thread
 
 8.0.0
 -----
