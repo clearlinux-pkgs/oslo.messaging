@@ -1,6 +1,12 @@
 CHANGES
 =======
 
+9.0.1
+-----
+
+* Fix oslo.messaging default transport
+* always build universal wheels
+
 9.0.0
 -----
 
