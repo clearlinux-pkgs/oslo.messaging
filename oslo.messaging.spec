@@ -5,18 +5,18 @@
 # Source0 file verified with key 0x1A541148054E9E38 (infra-root@openstack.org)
 #
 Name     : oslo.messaging
-Version  : 9.0.1
-Release  : 68
-URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.0.1.tar.gz
-Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.0.1.tar.gz
-Source99 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.0.1.tar.gz.asc
+Version  : 9.1.0
+Release  : 69
+URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.1.0.tar.gz
+Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.1.0.tar.gz
+Source99 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.1.0.tar.gz.asc
 Summary  : Oslo Messaging API
 Group    : Development/Tools
 License  : Apache-2.0
-Requires: oslo.messaging-bin
-Requires: oslo.messaging-python3
-Requires: oslo.messaging-license
-Requires: oslo.messaging-python
+Requires: oslo.messaging-bin = %{version}-%{release}
+Requires: oslo.messaging-license = %{version}-%{release}
+Requires: oslo.messaging-python = %{version}-%{release}
+Requires: oslo.messaging-python3 = %{version}-%{release}
 Requires: PyYAML
 Requires: Sphinx
 Requires: WebOb
@@ -83,20 +83,20 @@ python3 components for the oslo.messaging package.
 
 
 %prep
-%setup -q -n oslo.messaging-9.0.1
+%setup -q -n oslo.messaging-9.1.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1539122405
+export SOURCE_DATE_EPOCH=1539731824
 python3 setup.py build
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/oslo.messaging
-cp LICENSE %{buildroot}/usr/share/doc/oslo.messaging/LICENSE
+mkdir -p %{buildroot}/usr/share/package-licenses/oslo.messaging
+cp LICENSE %{buildroot}/usr/share/package-licenses/oslo.messaging/LICENSE
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -111,7 +111,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/doc/oslo.messaging/LICENSE
+/usr/share/package-licenses/oslo.messaging/LICENSE
 
 %files python
 %defattr(-,root,root,-)

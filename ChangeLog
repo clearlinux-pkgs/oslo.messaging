@@ -1,6 +1,12 @@
 CHANGES
 =======
 
+9.1.0
+-----
+
+* Using pip as a python module
+* Allow transport\_url initialization in ConfFixture constructor
+
 9.0.1
 -----
 
