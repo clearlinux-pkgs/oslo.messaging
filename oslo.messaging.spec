@@ -6,7 +6,7 @@
 #
 Name     : oslo.messaging
 Version  : 9.1.1
-Release  : 70
+Release  : 71
 URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.1.1.tar.gz
 Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.1.1.tar.gz
 Source99 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.1.1.tar.gz.asc
@@ -90,7 +90,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1540463451
+export SOURCE_DATE_EPOCH=1541270691
 python3 setup.py build
 
 %install
