@@ -1,6 +1,10 @@
 CHANGES
 =======
 
+9.2.0
+-----
+
+
 9.1.1
 -----
 
@@ -10,6 +14,7 @@ CHANGES
 -----
 
 * Using pip as a python module
+* doc: Remove crud from conf.py file
 * Clean up .gitignore references to personal tools
 * Allow transport\_url initialization in ConfFixture constructor
 
@@ -18,6 +23,7 @@ CHANGES
 
 * Fix oslo.messaging default transport
 * always build universal wheels
+* Use default exchange for direct messaging
 
 9.0.0
 -----
