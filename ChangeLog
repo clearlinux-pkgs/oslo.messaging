@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+9.2.1
+-----
+
+* Use ensure\_connection to prevent loss of connection error logs
+
 9.2.0
 -----
 
