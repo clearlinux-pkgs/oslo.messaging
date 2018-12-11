@@ -1,6 +1,13 @@
 CHANGES
 =======
 
+9.3.0
+-----
+
+* Update mailinglist from dev to discuss
+* Switch driver to confluent-kafka client library
+* Don't use monotonic with Python >=3.3
+
 9.2.1
 -----
 
@@ -9,6 +16,7 @@ CHANGES
 9.2.0
 -----
 
+* Add a test for rabbit URLs lacking terminating '/'
 
 9.1.1
 -----
