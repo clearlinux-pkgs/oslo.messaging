@@ -6,7 +6,7 @@
 #
 Name     : oslo.messaging
 Version  : 9.3.0
-Release  : 74
+Release  : 75
 URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.3.0.tar.gz
 Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.3.0.tar.gz
 Source99 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.3.0.tar.gz.asc
