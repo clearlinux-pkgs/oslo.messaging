@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+9.3.1
+-----
+
+* Avoid unnecessary use of items()
+
 9.3.0
 -----
 
