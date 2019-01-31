@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+9.4.0
+-----
+
+* Bump amqp requirement version to >= 2.4.0
+
 9.3.1
 -----
 
