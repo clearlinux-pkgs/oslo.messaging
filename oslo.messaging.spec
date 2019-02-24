@@ -6,7 +6,7 @@
 #
 Name     : oslo.messaging
 Version  : 9.4.0
-Release  : 77
+Release  : 78
 URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.4.0.tar.gz
 Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.4.0.tar.gz
 Source99 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.4.0.tar.gz.asc
@@ -18,16 +18,13 @@ Requires: oslo.messaging-license = %{version}-%{release}
 Requires: oslo.messaging-python = %{version}-%{release}
 Requires: oslo.messaging-python3 = %{version}-%{release}
 Requires: PyYAML
-Requires: Sphinx
 Requires: WebOb
 Requires: amqp
 Requires: cachetools
 Requires: debtcollector
-Requires: fixtures
 Requires: futurist
 Requires: kombu
 Requires: monotonic
-Requires: openstackdocstheme
 Requires: oslo.config
 Requires: oslo.i18n
 Requires: oslo.log
@@ -36,10 +33,8 @@ Requires: oslo.serialization
 Requires: oslo.service
 Requires: oslo.utils
 Requires: pbr
-Requires: reno
 Requires: six
 Requires: stevedore
-Requires: tenacity
 BuildRequires : buildreq-distutils3
 BuildRequires : pbr
 
@@ -93,7 +88,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1548943086
+export SOURCE_DATE_EPOCH=1551030282
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
