@@ -1,10 +1,20 @@
 CHANGES
 =======
 
+9.5.0
+-----
+
+* add python 3.7 unit test job
+* Mark telemetry tests nv and remove from gate
+* Bump amqp requirement version to >=2.4.1
+* Change python3.5 job to python3.7 job on Stein+
+
 9.4.0
 -----
 
 * Bump amqp requirement version to >= 2.4.0
+* Kafka driver deployment guide
+* Update hacking version
 
 9.3.1
 -----
