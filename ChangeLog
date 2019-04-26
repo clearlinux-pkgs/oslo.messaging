@@ -1,6 +1,19 @@
 CHANGES
 =======
 
+9.6.0
+-----
+
+* OpenDev Migration Patch
+* Dropping the py35 testing
+* Handle collections.abc deprecations
+* Unmark RabbitMQ heartbeat as experimental
+* Replace openstack.org git:// URLs with https://
+* Explain why Listener connections cannot be pooled
+* Update master for stable/stein
+* Clarify the documentation for pooled Notification Listeners
+* Update messaging intermediaries for amqp1 tests
+
 9.5.0
 -----
 
