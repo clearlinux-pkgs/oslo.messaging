@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x1A541148054E9E38 (infra-root@openstack.org)
 #
 Name     : oslo.messaging
-Version  : 9.6.0
-Release  : 81
-URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.6.0.tar.gz
-Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.6.0.tar.gz
-Source99 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.6.0.tar.gz.asc
+Version  : 9.7.0
+Release  : 82
+URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.7.0.tar.gz
+Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.7.0.tar.gz
+Source99 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-9.7.0.tar.gz.asc
 Summary  : Oslo Messaging API
 Group    : Development/Tools
 License  : Apache-2.0
@@ -26,7 +26,6 @@ Requires: futurist
 Requires: kombu
 Requires: monotonic
 Requires: oslo.config
-Requires: oslo.i18n
 Requires: oslo.log
 Requires: oslo.middleware
 Requires: oslo.serialization
@@ -35,8 +34,24 @@ Requires: oslo.utils
 Requires: pbr
 Requires: six
 Requires: stevedore
+BuildRequires : PyYAML
+BuildRequires : WebOb
+BuildRequires : amqp
 BuildRequires : buildreq-distutils3
+BuildRequires : cachetools
+BuildRequires : debtcollector
+BuildRequires : futurist
+BuildRequires : kombu
+BuildRequires : monotonic
+BuildRequires : oslo.config
+BuildRequires : oslo.log
+BuildRequires : oslo.middleware
+BuildRequires : oslo.serialization
+BuildRequires : oslo.service
+BuildRequires : oslo.utils
 BuildRequires : pbr
+BuildRequires : six
+BuildRequires : stevedore
 
 %description
 ========================
@@ -81,14 +96,21 @@ python3 components for the oslo.messaging package.
 
 
 %prep
-%setup -q -n oslo.messaging-9.6.0
+%setup -q -n oslo.messaging-9.7.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1556300214
+export SOURCE_DATE_EPOCH=1558475528
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 

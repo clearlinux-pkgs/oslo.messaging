@@ -1,12 +1,22 @@
 CHANGES
 =======
 
+9.7.0
+-----
+
+* Cap Bandit below 1.6.0 and update Sphinx requirement
+* Fix switch connection destination when a rabbitmq cluster node disappear
+* Replace git.openstack.org URLs with opendev.org URLs
+* Remove log translation and i18n
+
 9.6.0
 -----
 
 * OpenDev Migration Patch
 * Dropping the py35 testing
+* Consider the topic parameter as an array in client-notify
 * Handle collections.abc deprecations
+* Retry to declare a queue after internal error
 * Unmark RabbitMQ heartbeat as experimental
 * Replace openstack.org git:// URLs with https://
 * Explain why Listener connections cannot be pooled
@@ -17,6 +27,7 @@ CHANGES
 9.5.0
 -----
 
+* Handle unexpected failures during call monitor heartbeat
 * add python 3.7 unit test job
 * Mark telemetry tests nv and remove from gate
 * Bump amqp requirement version to >=2.4.1
