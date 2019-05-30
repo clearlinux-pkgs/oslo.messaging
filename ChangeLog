@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+9.7.1
+-----
+
+* Add thread name to the RabbitMQ heartbeat thread
+
 9.7.0
 -----
 
