@@ -1,2 +1,9 @@
 # This file contains recursive sources that require this package
 barbican
+cinder
+glance
+ironic
+keystonemiddleware
+neutron
+neutron-lib
+nova
