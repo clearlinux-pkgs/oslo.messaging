@@ -1,6 +1,17 @@
 CHANGES
 =======
 
+9.8.0
+-----
+
+* Add Python 3 Train unit tests
+* Implement mandatory flag for RabbitMQ driver
+* Implement the transport options
+* Add the "transport\_options" parameter to the amqp1 and kafka drivers
+* fix typos
+* Add transport\_options parameter
+* Download kafka from archive.apache.org
+
 9.7.2
 -----
 
