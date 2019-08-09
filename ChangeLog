@@ -1,13 +1,23 @@
 CHANGES
 =======
 
+10.0.0
+------
+
+* Correcting typo in acknowledge spelling
+* Bump the openstackdocstheme extension to 1.20
+
 9.8.0
 -----
 
 * Add Python 3 Train unit tests
+* Blacklist sphinx 2.1.0 (autodoc bug)
+* Use default exchange for direct messaging
+* doc: Cleanup admin docs
 * Implement mandatory flag for RabbitMQ driver
 * Implement the transport options
 * Add the "transport\_options" parameter to the amqp1 and kafka drivers
+* Support kafka message compression
 * fix typos
 * Add transport\_options parameter
 * Download kafka from archive.apache.org
