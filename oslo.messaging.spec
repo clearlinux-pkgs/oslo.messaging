@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xFC43F0EE211DFED8 (infra-root@openstack.org)
 #
 Name     : oslo.messaging
-Version  : 10.0.0
-Release  : 87
-URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-10.0.0.tar.gz
-Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-10.0.0.tar.gz
-Source1 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-10.0.0.tar.gz.asc
+Version  : 10.1.0
+Release  : 88
+URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-10.1.0.tar.gz
+Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-10.1.0.tar.gz
+Source1 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-10.1.0.tar.gz.asc
 Summary  : Oslo Messaging API
 Group    : Development/Tools
 License  : Apache-2.0
@@ -96,14 +96,14 @@ python3 components for the oslo.messaging package.
 
 
 %prep
-%setup -q -n oslo.messaging-10.0.0
+%setup -q -n oslo.messaging-10.1.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565322498
+export SOURCE_DATE_EPOCH=1566484711
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar

@@ -1,6 +1,13 @@
 CHANGES
 =======
 
+10.1.0
+------
+
+* Introduce RabbitMQ driver documentation
+* Allow users run the rabbitmq heartbeat inside a standard pthread
+* Fix nits on kafka compression help text
+
 10.0.0
 ------
 

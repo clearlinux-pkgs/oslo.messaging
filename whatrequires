@@ -3,7 +3,9 @@ barbican
 cinder
 glance
 ironic
+keystone
 keystonemiddleware
 neutron
 neutron-lib
 nova
+sahara
