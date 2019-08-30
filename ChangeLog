@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+10.2.0
+------
+
+* Add the mandatory flag for direct send
+
 10.1.0
 ------
 
