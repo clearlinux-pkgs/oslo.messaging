@@ -8,4 +8,5 @@ keystonemiddleware
 neutron
 neutron-lib
 nova
+oslo.versionedobjects
 sahara

@@ -1,6 +1,16 @@
 CHANGES
 =======
 
+10.3.0
+------
+
+* Remove unused variable WAKE\_UP
+* Fix spacing in help message
+* Update the constraints url
+* Align message serialization between drivers
+* Update master for stable/train
+* Fix help text for heartbeat\_in\_pthread option
+
 10.2.0
 ------
 
