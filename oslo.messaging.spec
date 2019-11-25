@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x4F398DEAE440091C (infra-root@openstack.org)
 #
 Name     : oslo.messaging
-Version  : 10.3.0
-Release  : 90
-URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-10.3.0.tar.gz
-Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-10.3.0.tar.gz
-Source1 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-10.3.0.tar.gz.asc
+Version  : 10.4.0
+Release  : 91
+URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-10.4.0.tar.gz
+Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-10.4.0.tar.gz
+Source1 : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-10.4.0.tar.gz.asc
 Summary  : Oslo Messaging API
 Group    : Development/Tools
 License  : Apache-2.0
@@ -96,15 +96,15 @@ python3 components for the oslo.messaging package.
 
 
 %prep
-%setup -q -n oslo.messaging-10.3.0
-cd %{_builddir}/oslo.messaging-10.3.0
+%setup -q -n oslo.messaging-10.4.0
+cd %{_builddir}/oslo.messaging-10.4.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1573749412
+export SOURCE_DATE_EPOCH=1574718815
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -121,7 +121,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/oslo.messaging
-cp %{_builddir}/oslo.messaging-10.3.0/LICENSE %{buildroot}/usr/share/package-licenses/oslo.messaging/b9a131284bb03c49a33f0ade435e87c1bff4394b
+cp %{_builddir}/oslo.messaging-10.4.0/LICENSE %{buildroot}/usr/share/package-licenses/oslo.messaging/b9a131284bb03c49a33f0ade435e87c1bff4394b
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
