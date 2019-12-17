@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+10.4.1
+------
+
+* Revert "Add RPC incoming and reply log"
+
 10.4.0
 ------
 
