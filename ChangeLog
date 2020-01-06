@@ -1,10 +1,18 @@
 CHANGES
 =======
 
+10.5.0
+------
+
+* Ignore releasenote cache within git untracked files
+* Do not use threading.Event
+* Removed unused variable pools
+
 10.4.1
 ------
 
 * Revert "Add RPC incoming and reply log"
+* Remove telemetry checks
 
 10.4.0
 ------
