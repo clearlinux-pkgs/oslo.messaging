@@ -1,6 +1,15 @@
 CHANGES
 =======
 
+11.0.0
+------
+
+* [ussuri][goal] Drop python 2.7 support and testing
+* Don't log NoSuchMethod for special non-existing methods
+* Add support for kafka SSL autentication
+* Adding debug logs on AMQPListener poll
+* tox: Trivial cleanup
+
 10.5.0
 ------
 
