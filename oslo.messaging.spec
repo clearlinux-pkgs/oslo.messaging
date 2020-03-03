@@ -6,7 +6,7 @@
 #
 Name     : oslo.messaging
 Version  : 11.0.0
-Release  : 96
+Release  : 97
 URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-11.0.0.tar.gz
 Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-11.0.0.tar.gz
 Source1  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-11.0.0.tar.gz.asc
@@ -57,8 +57,31 @@ BuildRequires : stevedore
 ========================
 Team and repository tags
 ========================
+
 .. image:: https://governance.openstack.org/tc/badges/oslo.messaging.svg
-:target: https://governance.openstack.org/tc/reference/tags/index.html
+    :target: https://governance.openstack.org/tc/reference/tags/index.html
+
+.. Change things from this point on
+
+Oslo Messaging Library
+======================
+
+.. image:: https://img.shields.io/pypi/v/oslo.messaging.svg
+    :target: https://pypi.org/project/oslo.messaging/
+    :alt: Latest Version
+
+.. image:: https://img.shields.io/pypi/dm/oslo.messaging.svg
+    :target: https://pypi.org/project/oslo.messaging/
+    :alt: Downloads
+
+The Oslo messaging API supports RPC and notifications over a number of
+different messaging transports.
+
+* License: Apache License, Version 2.0
+* Documentation: https://docs.openstack.org/oslo.messaging/latest/
+* Source: https://opendev.org/openstack/oslo.messaging
+* Bugs: https://bugs.launchpad.net/oslo.messaging
+* Release notes: https://docs.openstack.org/releasenotes/oslo.messaging/
 
 %package bin
 Summary: bin components for the oslo.messaging package.
@@ -90,6 +113,7 @@ python components for the oslo.messaging package.
 Summary: python3 components for the oslo.messaging package.
 Group: Default
 Requires: python3-core
+Provides: pypi(oslo.messaging)
 
 %description python3
 python3 components for the oslo.messaging package.
@@ -104,7 +128,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1581038746
+export SOURCE_DATE_EPOCH=1583194286
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
