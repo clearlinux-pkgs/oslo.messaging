@@ -1,6 +1,14 @@
 CHANGES
 =======
 
+12.0.0
+------
+
+* Remove the deprecated blocking executor
+* remove outdated header
+* reword releasenote for py27 support dropping
+* Setup backend scenarios for functional tests
+
 11.0.0
 ------
 
