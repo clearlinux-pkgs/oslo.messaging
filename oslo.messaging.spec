@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x4F398DEAE440091C (infra-root@openstack.org)
 #
 Name     : oslo.messaging
-Version  : 12.0.0
-Release  : 98
-URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-12.0.0.tar.gz
-Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-12.0.0.tar.gz
-Source1  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-12.0.0.tar.gz.asc
+Version  : 12.1.0
+Release  : 99
+URL      : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-12.1.0.tar.gz
+Source0  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-12.1.0.tar.gz
+Source1  : https://tarballs.openstack.org/oslo.messaging/oslo.messaging-12.1.0.tar.gz.asc
 Summary  : Oslo Messaging API
 Group    : Development/Tools
 License  : Apache-2.0
@@ -57,31 +57,8 @@ BuildRequires : stevedore
 ========================
 Team and repository tags
 ========================
-
 .. image:: https://governance.openstack.org/tc/badges/oslo.messaging.svg
-    :target: https://governance.openstack.org/tc/reference/tags/index.html
-
-.. Change things from this point on
-
-Oslo Messaging Library
-======================
-
-.. image:: https://img.shields.io/pypi/v/oslo.messaging.svg
-    :target: https://pypi.org/project/oslo.messaging/
-    :alt: Latest Version
-
-.. image:: https://img.shields.io/pypi/dm/oslo.messaging.svg
-    :target: https://pypi.org/project/oslo.messaging/
-    :alt: Downloads
-
-The Oslo messaging API supports RPC and notifications over a number of
-different messaging transports.
-
-* License: Apache License, Version 2.0
-* Documentation: https://docs.openstack.org/oslo.messaging/latest/
-* Source: https://opendev.org/openstack/oslo.messaging
-* Bugs: https://bugs.launchpad.net/oslo.messaging
-* Release notes: https://docs.openstack.org/releasenotes/oslo.messaging/
+:target: https://governance.openstack.org/tc/reference/tags/index.html
 
 %package bin
 Summary: bin components for the oslo.messaging package.
@@ -114,21 +91,37 @@ Summary: python3 components for the oslo.messaging package.
 Group: Default
 Requires: python3-core
 Provides: pypi(oslo.messaging)
+Requires: pypi(webob)
+Requires: pypi(debtcollector)
+Requires: pypi(stevedore)
+Requires: pypi(oslo.config)
+Requires: pypi(cachetools)
+Requires: pypi(oslo.log)
+Requires: pypi(six)
+Requires: pypi(futurist)
+Requires: pypi(oslo.serialization)
+Requires: pypi(pyyaml)
+Requires: pypi(amqp)
+Requires: pypi(oslo.utils)
+Requires: pypi(pbr)
+Requires: pypi(kombu)
+Requires: pypi(oslo.service)
+Requires: pypi(oslo.middleware)
 
 %description python3
 python3 components for the oslo.messaging package.
 
 
 %prep
-%setup -q -n oslo.messaging-12.0.0
-cd %{_builddir}/oslo.messaging-12.0.0
+%setup -q -n oslo.messaging-12.1.0
+cd %{_builddir}/oslo.messaging-12.1.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583249006
+export SOURCE_DATE_EPOCH=1586273018
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -145,7 +138,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/oslo.messaging
-cp %{_builddir}/oslo.messaging-12.0.0/LICENSE %{buildroot}/usr/share/package-licenses/oslo.messaging/b9a131284bb03c49a33f0ade435e87c1bff4394b
+cp %{_builddir}/oslo.messaging-12.1.0/LICENSE %{buildroot}/usr/share/package-licenses/oslo.messaging/b9a131284bb03c49a33f0ade435e87c1bff4394b
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :

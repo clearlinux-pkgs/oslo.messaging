@@ -1,13 +1,9 @@
 # This file contains recursive sources that require this package
-barbican
 cinder
-glance
 heat
 ironic
 keystone
 keystonemiddleware
 neutron
 neutron-lib
-nova
 oslo.versionedobjects
-sahara
