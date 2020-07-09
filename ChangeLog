@@ -1,6 +1,13 @@
 CHANGES
 =======
 
+12.2.1
+------
+
+* tests: Resolves issues with kombu > 4.6.8
+* Simplify tools/test-setup.sh
+* Fix pygments style
+
 12.2.0
 ------
 
@@ -10,6 +17,7 @@ CHANGES
 * Print warning message when connection running out
 * Remove six usage
 * Remove monotonic usage
+* Align contributing doc with oslo's policy
 * Bump default tox env from py37 to py38
 * Add py38 package metadata
 * Add release notes links to doc index
