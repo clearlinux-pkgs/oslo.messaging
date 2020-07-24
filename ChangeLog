@@ -1,11 +1,17 @@
 CHANGES
 =======
 
+12.2.2
+------
+
+* Move legacy grenade jobs to Zuul v3
+
 12.2.1
 ------
 
 * tests: Resolves issues with kombu > 4.6.8
 * Simplify tools/test-setup.sh
+* Drop a python 2 exception management
 * Fix pygments style
 
 12.2.0
