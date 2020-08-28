@@ -1,10 +1,17 @@
 CHANGES
 =======
 
+12.3.0
+------
+
+* Cancel consumer if queue down
+* Bump bandit version
+
 12.2.2
 ------
 
 * Move legacy grenade jobs to Zuul v3
+* Catch ConnectionForced Exception
 
 12.2.1
 ------
