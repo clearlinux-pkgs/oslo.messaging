@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+12.4.0
+------
+
+* Add a ping endpoint to RPC dispatcher
+
 12.3.0
 ------
 
