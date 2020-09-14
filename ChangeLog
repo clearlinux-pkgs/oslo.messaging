@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+12.5.0
+------
+
+* [goal] Migrate testing to ubuntu focal
+
 12.4.0
 ------
 
